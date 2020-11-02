@@ -68,7 +68,7 @@ def write_file():
 		f.write(f"{word.german} - {word.other}\n")
 	f.close()
 
-def search_vocab_file(path, extension):
+def search_file(path, extension):
     """ 
        extension with leading point, for example: ".png"
     """
@@ -78,7 +78,7 @@ def search_vocab_file(path, extension):
                 yield os.path.join(root, filename)
 # Main		
 if __name__ == '__main__':
-	file_list = list(search_vocab_file('.', '.txt'))
+	file_list = list(search_file('.', '.txt'))
 	if len(file_list) >= 1:
 		load = input("Es liegt eine gespeicherte Vokabelliste vor, willst du sie laden? \n>>").lower()
 		if load == "ja":
